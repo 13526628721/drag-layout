@@ -3,6 +3,9 @@
 ## 概述
     基于react完成的一个插件，拖拽修改页面布局。核心代码在src/drag_layout/index.js。
 
+## demo
+
+[demo](https://13526628721.github.io/drag-layout/dist/index)
 
 ## 下载后项目启动
 ```bash
