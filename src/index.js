@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 import DragLayout from './drag_layout/index.js'
 
-require('./app.css')
 class App extends React.Component {
   constructor(props) {
     super(props);
