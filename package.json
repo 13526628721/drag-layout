@@ -1,0 +1,46 @@
+{
+  "name": "react-cron",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "rimraf ./dists/ && webpack --config build/webpack.dev.config.js",
+    "start": " webpack-dev-server --config build/webpack.dev.config.js",
+    "umd": "rimraf ./module/dist/ && webpack --config build/webpack.prod.config.js && rimraf ./module/dist/assets",
+    "build:es": "rimraf ./module/es/ && cross-env BABEL_ENV=es babel src/components -d module/es ",
+    "build:lib": "rimraf ./module/lib && cross-env BABEL_ENV=commonjs babel src/components -d module/lib ",
+    "build:css": "cd build && gulp",
+    "build:i": "cd module && npm install",
+    "build": "npm run umd && npm run build:es && npm run build:lib && npm run build:css && npm run build:i"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-proposal-decorators": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.10.4",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "babel-loader": "^8.1.0",
+    "cache-loader": "^4.1.0",
+    "css-loader": "^3.6.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "less-loader": "^7.0.0",
+    "postcss-loader": "^3.0.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "html-webpack-plugin": "^4.3.0",
+    "babel-plugin-import": "^1.13.0",
+    "webpack": "^4.43.0",
+    "webpack-bundle-analyzer": "^3.8.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "antd": "^4.2.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3"
+  }
+}
